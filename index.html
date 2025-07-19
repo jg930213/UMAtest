@@ -14,12 +14,13 @@
       margin: 0;
       flex-direction: column;
     }
-
-    h1 {
-      font-size: 5em;
-      color: #ff69b4;
-      animation: pop 1s ease-out;
-    }
+	
+	.big-button {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    padding: 15px 30px;
+	}
 
     @keyframes pop {
       0% { transform: scale(0); opacity: 0; }
@@ -28,11 +29,9 @@
   </style>
 </head>
 <body>
-  <h1>5ma</h1>
-  
-  
-  <button onclick="playAudio()">5ma</button>
-
+	<button id="myBtn" class="big-button" onclick="playAudio()">5ma！</button>
+	<p id="popupText"  style="display:none;">5ma！</p>
+	
   <audio id="myAudio">
     <source src="data\sample.mp3" type="audio/mpeg">
   </audio>
@@ -45,6 +44,18 @@
 	function playAudio() {
       document.getElementById('myAudio').play();
     }
+	
+	const btn = document.getElementById('myBtn');
+  const text = document.getElementById('popupText');
+
+  btn.addEventListener('click', () => {
+    if (text.style.display === 'none') {
+      text.style.display = 'block';
+	  text.style.animation = 'pop 1s ease-out';
+	  text.style.color = '#ff69b4';
+	  text.style.fontSize = "80px";
+    } 
+  });
   </script>
   
 
