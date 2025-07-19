@@ -29,8 +29,25 @@
 </head>
 <body>
   <h1>5ma</h1>
+  
+  
+  <button onclick="playAudio()">5ma</button>
+
+  <audio id="myAudio">
+    <source src="data\sample.mp3" type="audio/mpeg">
+  </audio>
+  
+
+  
   <script>
     console.log("歡迎來到夏微微微.exe 網頁版！");
+	
+	function playAudio() {
+      document.getElementById('myAudio').play();
+    }
   </script>
+  
+
+  
 </body>
 </html>
